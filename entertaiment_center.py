@@ -1,40 +1,37 @@
 import fresh_tomatoes
 import media
 
-toy_story = media.Movie("toy story",
-												"a story of a boy and his toys that come to life",
-												"https://upload.wikimedia.org/wikipedia/en/thumb/1/13/Toy_Story.jpg/220px-Toy_Story.jpg",
-												"https://www.youtube.com/watch?v=QpL9hkXBqk8")
-# print(toy_story.story_line)
+amelie = media.Movie("Amelie",
+												"A story of a girl and her naighbor in Montmartre, Paris",
+												"https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Amelie_poster.jpg/220px-Amelie_poster.jpg",
+												"https://www.youtube.com/watch?v=sECzJY07oK4")
 
-avatar = media.Movie("Avatar",
-										 "a marine on an alian planet",
-										 "https://upload.wikimedia.org/wikipedia/en/thumb/b/b0/Avatar-Teaser-Poster.jpg/220px-Avatar-Teaser-Poster.jpg",
-										 "https://www.youtube.com/watch?v=5PSNL1qE6VY")
+he_is_not_that_into_you = media.Movie("He Is Not That Into You",
+										 "A story about the complexities of modern relationships",
+										 "https://upload.wikimedia.org/wikipedia/en/thumb/2/2e/Notintoyouposter.jpg/220px-Notintoyouposter.jpg",
+										 "https://www.youtube.com/watch?v=3_DHhPckJNo")
 
-# print(avatar.story_line)
-# avatar.show_trailer()
 
-sisters_act = media.Movie("sister's act",
-										 "a singer went to a church, and started to lead a gospel choir",
+love_actually = media.Movie("Love Actually",
+										 "A story of verious coupples in christmas season.",
+										 "https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/Love_Actually_movie.jpg/220px-Love_Actually_movie.jpg",
+										 "https://www.youtube.com/watch?v=KdzH6a-XEGM")
+
+
+sister_act = media.Movie("Sister Act",
+										 "A singer went to a church, and started to lead a gospel choir",
 										 "https://upload.wikimedia.org/wikipedia/en/thumb/4/46/Sister_Act_2_Back_in_the_Habit_film_poster.jpg/220px-Sister_Act_2_Back_in_the_Habit_film_poster.jpg",
 										 "https://www.youtube.com/watch?v=dfo4r-VNCOA")
 
-# sisters_act.show_trailer()
-school_of_rock = media.Movie("school of rock",
-										 "jack black played a guy who is kicked out of his band and subsequently disguises himself as a teacher at a prestigious prep school. ",
-										 "https://upload.wikimedia.org/wikipedia/en/thumb/1/11/School_of_Rock_Poster.jpg/220px-School_of_Rock_Poster.jpg",
-										 "https://www.youtube.com/watch?v=XCwy6lW5Ixc")
-
-midnight_in_paris = media.Movie("midnight in paris",
-										 "an american men goes to paris and find himseld ",
+midnight_in_paris = media.Movie("Midnight In Paris",
+										 "An american men goes to paris and find himseld ",
 										 "https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Midnight_in_Paris_Poster.jpg/215px-Midnight_in_Paris_Poster.jpg",
 										 "https://www.youtube.com/watch?v=-NoGpkSTK8k")
 
-barcelona = media.Movie("vicky christina barcelona",
-										 "directed by Woody Allen",
+barcelona = media.Movie("Vicky Cristina Barcelona",
+										 "A story of two american girls spend a summer holiday in Barcelona",
 										 "https://upload.wikimedia.org/wikipedia/en/thumb/2/28/Vicky_cristina_barcelona.jpg/220px-Vicky_cristina_barcelona.jpg",
 										 "https://www.youtube.com/watch?v=x4VuLUKbnW8")
 
-movies = [toy_story, avatar, school_of_rock, sisters_act, midnight_in_paris, barcelona]
+movies = [amelie, he_is_not_that_into_you, love_actually, sister_act, midnight_in_paris, barcelona]
 fresh_tomatoes.open_movies_page(movies)
