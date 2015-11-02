@@ -36,9 +36,5 @@ barcelona = media.Movie("vicky christina barcelona",
 										 "https://upload.wikimedia.org/wikipedia/en/thumb/2/28/Vicky_cristina_barcelona.jpg/220px-Vicky_cristina_barcelona.jpg",
 										 "https://www.youtube.com/watch?v=x4VuLUKbnW8")
 
-# movies = [toy_story, avatar, school_of_rock, sisters_act, midnight_in_paris, barcelona]
-# fresh_tomatoes.open_movies_page(movies)
-
-# print(media.Movie.VALID_RATING)
-
-print(media.Movie.__doc__)
+movies = [toy_story, avatar, school_of_rock, sisters_act, midnight_in_paris, barcelona]
+fresh_tomatoes.open_movies_page(movies)
