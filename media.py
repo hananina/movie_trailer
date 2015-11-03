@@ -6,6 +6,7 @@ class Video():
 	"""This class is parent class of Movie and Drama"""
 
 	def __init__(self, release_date, valid_rating):
+
 		# Constant allways need to be capitarized
 		self.release_date = release_date
 		self.valid_rating = valid_rating
@@ -14,7 +15,9 @@ class Video():
 class Movie(Video):
 	"""This class provides a way to store movie related information"""
 
-	def __init__(self, release_date, valid_rating, movie_title, movie_storyline, poster_image_url, trailer_youtube_id):
+	def __init__(self, release_date, valid_rating, movie_title,
+		movie_storyline, poster_image_url, trailer_youtube_id):
+
 		Video.__init__(self, release_date, valid_rating)
 		self.title = movie_title
 		self.storyline = movie_storyline
@@ -25,7 +28,9 @@ class Movie(Video):
 class Drama(Video):
 	"""This class provides a way to store drama related information"""
 
-	def __init__(self, release_date, valid_rating, drama_title, drama_storyline, poster_image_url, trailer_youtube_id):
+	def __init__(self, release_date, valid_rating, drama_title,
+		drama_storyline, poster_image_url, trailer_youtube_id):
+
 		Video.__init__(self, release_date, valid_rating)
 		self.title = drama_title
 		self.storyline = drama_storyline
