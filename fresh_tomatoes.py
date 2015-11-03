@@ -36,8 +36,8 @@ main_page_head = '''
             height: 100%;
         }
         .movie-tile {
-            margin-bottom: 40px;
-            padding-top: 40px;
+            margin-bottom: 3%;
+            padding: 3% 1%;
         }
         .movie-tile:hover {
             background-color: #EEE;
@@ -56,7 +56,7 @@ main_page_head = '''
             top: 0;
             background-color: white;
         }
-        .color-gray{
+        .storyline{
             color: gray;
         }
     </style>
@@ -110,13 +110,13 @@ main_page_content = '''
       <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#">Fresh Tomatoes Movie Trailers</a>
+            <a class="navbar-brand" href="#">Fresh Tomatoes Movie & Drama Trailers&#127813;</a>
           </div>
         </div>
       </div>
     </div>
     <div class="container">
-      {movie_tiles}
+      {video_titles}
     </div>
   </body>
 </html>
@@ -124,43 +124,49 @@ main_page_content = '''
 
 
 # A single movie entry html template
-movie_tile_content = '''
+video_tile_content = '''
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
     <img src="{poster_image_url}" width="220" height="342">
-    <h2>{movie_title}</h2>
-    <h3 class="color-gray">{movie_storyline}<h3>
+    <h2>{video_title}</h2>
+    <h3 class="storyline">{video_storyline}<h3>
+    <div><small>Release date: {release_date}</small></div>
+    <div><small>Valid Rating: {valid_raitng}</small></div>
 </div>
 '''
 
-
-def create_movie_tiles_content(movies):
+def create_video_titles_content(videos):
     # The HTML content for this section of the page
     content = ''
-    for movie in movies:
+    for video in videos:
         # Extract the youtube ID from the url
+        # r'' is to escape any marks inside of ''
+        # 
         youtube_id_match = re.search(
-            r'(?<=v=)[^&#]+', movie.trailer_youtube_url)
+            r'(?<=v=)[^&#]+', video.trailer_youtube_url)
         youtube_id_match = youtube_id_match or re.search(
-            r'(?<=be/)[^&#]+', movie.trailer_youtube_url)
+            r'(?<=be/)[^&#]+', video.trailer_youtube_url)
         trailer_youtube_id = (youtube_id_match.group(0) if youtube_id_match
                               else None)
 
         # Append the tile for the movie with its content filled in
-        content += movie_tile_content.format(
-            movie_title=movie.title,
-            movie_storyline=movie.storyline,
-            poster_image_url=movie.poster_image_url,
+        # "format()" to set these values to display with {} in html above.
+        content += video_tile_content.format(
+            release_date=video.release_date,
+            valid_raitng=video.valid_raitng,
+            video_title=video.title,
+            video_storyline=video.storyline,
+            poster_image_url=video.poster_image_url,
             trailer_youtube_id=trailer_youtube_id
         )
     return content
 
-def open_movies_page(movies):
+def open_videos_page(videos):
     # Create or overwrite the output file
     output_file = open('fresh_tomatoes.html', 'w')
 
     # Replace the movie tiles placeholder generated content
     rendered_content = main_page_content.format(
-        movie_tiles=create_movie_tiles_content(movies))
+        video_titles=create_video_titles_content(videos))
 
 
     # Output the file
