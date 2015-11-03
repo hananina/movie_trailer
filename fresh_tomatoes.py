@@ -70,7 +70,8 @@ main_page_head = '''
         // Start playing the video whenever the trailer modal is opened
         $(document).on('click', '.movie-tile', function (event) {
             var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
-            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
+            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId
+                             + '?autoplay=1&html5=1';
             $("#trailer-video-container").empty().append($("<iframe></iframe>", {
               'id': 'trailer-video',
               'type': 'text-html',
@@ -125,7 +126,9 @@ main_page_content = '''
 
 # A single movie entry html template
 video_tile_content = '''
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
+<div class="col-md-6 col-lg-4 movie-tile text-center"
+     data-trailer-youtube-id="{trailer_youtube_id}"
+     data-toggle="modal" data-target="#trailer">
     <img src="{poster_image_url}" width="220" height="342">
     <h2>{video_title}</h2>
     <h3 class="storyline">{video_storyline}<h3>
@@ -134,13 +137,13 @@ video_tile_content = '''
 </div>
 '''
 
+
 def create_video_titles_content(videos):
     # The HTML content for this section of the page
     content = ''
     for video in videos:
         # Extract the youtube ID from the url
         # r'' is to escape any marks inside of ''
-        # 
         youtube_id_match = re.search(
             r'(?<=v=)[^&#]+', video.trailer_youtube_url)
         youtube_id_match = youtube_id_match or re.search(
@@ -160,6 +163,7 @@ def create_video_titles_content(videos):
         )
     return content
 
+
 def open_videos_page(videos):
     # Create or overwrite the output file
     output_file = open('fresh_tomatoes.html', 'w')
@@ -167,7 +171,6 @@ def open_videos_page(videos):
     # Replace the movie tiles placeholder generated content
     rendered_content = main_page_content.format(
         video_titles=create_video_titles_content(videos))
-
 
     # Output the file
     output_file.write(main_page_head + rendered_content)
