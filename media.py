@@ -1,6 +1,7 @@
 import webbrowser
 import re
 
+
 class Video():
 	"""This class is parent class of Movie and Drama"""
 
@@ -8,6 +9,7 @@ class Video():
 		# Constant allways need to be capitarized
 		self.release_date = release_date
 		self.valid_rating = valid_rating
+
 
 class Movie(Video):
 	"""This class provides a way to store movie related information"""
@@ -29,3 +31,4 @@ class Drama(Video):
 		self.storyline = drama_storyline
 		self.poster_image_url = poster_image_url
 		self.trailer_youtube_url = trailer_youtube_id
+
