@@ -2,10 +2,7 @@ import fresh_tomatoes
 import media
 
 
-"""Iinstances, append all movies and dramas infromation in a list
-and call the external rendering function"""
-
-
+# Iinstances
 amelie = media.Movie(
     "2001",
     "PG-12",
@@ -86,8 +83,10 @@ girls = media.Drama(
      "http://www.gstatic.com/tv/thumb/tvbanners/9020354/p9020354_b_v7_ac.jpg",
      "https://www.youtube.com/watch?v=RSXvQhR9CHQ")
 
-
+# Append all movies and dramas infromation in a list
+and call the external rendering function
 videos = [amelie, he_is_not_that_into_you, love_actually, sister_act,
           midnight_in_paris, barcelona, breaking_bad, heroes_reborn, girls]
 
+# Call the external rendering function
 fresh_tomatoes.open_videos_page(videos)
