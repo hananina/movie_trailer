@@ -130,7 +130,7 @@ video_tile_content = '''
     <h2>{video_title}</h2>
     <h3 class="storyline">{video_storyline}<h3>
     <div><small>Release date: {release_date}</small></div>
-    <div><small>Valid Rating: {valid_raitng}</small></div>
+    <div><small>Valid Rating: {valid_rating}</small></div>
 </div>
 '''
 
@@ -152,7 +152,7 @@ def create_video_titles_content(videos):
         # "format()" to set these values to display with {} in html above.
         content += video_tile_content.format(
             release_date=video.release_date,
-            valid_raitng=video.valid_raitng,
+            valid_rating=video.valid_rating,
             video_title=video.title,
             video_storyline=video.storyline,
             poster_image_url=video.poster_image_url,
