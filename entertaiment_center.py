@@ -7,7 +7,7 @@ amelie = media.Movie(
     "2001",
     "PG-12",
     "Amelie",
-    "A fanciful comedy about a young woman and people around her",
+    "A fanciful comedy about a young French girl",
     "https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Amelie_poster.jpg/220px-Amelie_poster.jpg",  # noqa
     "https://www.youtube.com/watch?v=sECzJY07oK4")
 
@@ -25,7 +25,7 @@ love_actually = media.Movie(
      "2003",
      "G",
      "Love Actually",
-     "A story of verious coupples in christmas season.",
+     "A story of verious coupples in christmas season",
      "https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/Love_Actually_movie.jpg/220px-Love_Actually_movie.jpg",  # noqa
      "https://www.youtube.com/watch?v=KdzH6a-XEGM")
 
@@ -43,7 +43,7 @@ midnight_in_paris = media.Movie(
      "2011",
      "G",
      "Midnight In Paris",
-     "A story of american guy spends his holiday in Paris, time traveled back and meet these cultural heroes of the past",  # noqa
+     "A story of american guy spends his holiday in Paris",
      "https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Midnight_in_Paris_Poster.jpg/215px-Midnight_in_Paris_Poster.jpg",  # noqa
      "https://www.youtube.com/watch?v=-NoGpkSTK8k")
 
@@ -83,8 +83,7 @@ girls = media.Drama(
      "http://www.gstatic.com/tv/thumb/tvbanners/9020354/p9020354_b_v7_ac.jpg",
      "https://www.youtube.com/watch?v=RSXvQhR9CHQ")
 
-# Append all movies and dramas infromation in a list
-and call the external rendering function
+# Append all movies and dramas infromation in a list and call the external rendering function
 videos = [amelie, he_is_not_that_into_you, love_actually, sister_act,
           midnight_in_paris, barcelona, breaking_bad, heroes_reborn, girls]
 
